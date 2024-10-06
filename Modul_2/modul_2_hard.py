@@ -11,4 +11,4 @@ def stone():
                 result.append(str(a))
                 result.append(str(b))
     print(f'{n} - {"".join(result)}')
-stone()
+    stone()
