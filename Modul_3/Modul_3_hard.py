@@ -11,9 +11,7 @@ def calculate_structure_sum(*args):
         elif isinstance(i, (int, float)):  # Если i - число
             result += i  # + число
         elif isinstance(i, str):  # Если i - строка
-            # сложить(Превратить j в int / если j может быть int / иначе считать цифрой 1
-            # подставить в j последовательно все из i)
-            result += sum(int(j) if j.isdigit() else 1 for j in i)  # Сумма цифр и 1 за символ
+            result += len(i)
     return result
 
 
