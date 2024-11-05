@@ -3,13 +3,6 @@ class House:
         self.name = name
         self.number_of_floors = number_of_floors
 
-    def go_to(self, new_floor):
-        if 1 <= new_floor <= self.number_of_floors:
-            for i in range(1, new_floor + 1):
-                print(f"Этаж:{i}")
-        else:
-            print("Такого этажа не существует")
-
     def __len__(self):
         return self.number_of_floors
 
@@ -46,6 +39,13 @@ class House:
 
     def __iadd__(self, value):
         return self.__add__(value)
+
+    def go_to(self, new_floor):
+        if 1 <= new_floor <= self.number_of_floors:
+            for i in range(1, new_floor + 1):
+                print(f"Этаж:{i}")
+        else:
+            print("Такого этажа не существует")
 
 
 separator = '-' * 305
