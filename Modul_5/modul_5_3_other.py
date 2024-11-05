@@ -48,37 +48,29 @@ class House:
             print("Такого этажа не существует")
 
 
-separator = '-' * 305
-
 # test
 h1 = House('ЖК Эльбрус', 10)
 h2 = House('ЖК Акация', 20)
 
 # __str__
 print(h1)
-print(separator)
 print(h2)
-print(separator)
 
 # __eq__
 print(h1 == h2)
-print(separator)
 
 # __add__
 h1 = h1 + 10
 print(h1)
 print(h1 == h2)
 
-print(separator)
 # __iadd__
 h1 += 10
 print(h1)
-print(separator)
 
 # __radd__
 h2 = 10 + h2
 print(h2)
-print(separator)
 
 # __gt__
 print(h1 > h2)
