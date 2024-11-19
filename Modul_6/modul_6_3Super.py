@@ -11,13 +11,13 @@ class Animal:
         self.speed = speed
 
     def move(self, dx, dy, dz):
-        NEW_Z = self._cords[2] + dz * self.speed
-        if NEW_Z < 0:
+        new_z = self._cords[2] + dz * self.speed
+        if new_z < 0:
             print("It's too deep, i can't dive :(")
             return
         self._cords[0] += dx * self.speed
         self._cords[1] += dy * self.speed
-        self._cords[2] += NEW_Z
+        self._cords[2] += new_z
 
     def get_cords(self):
         print(f'x: {self._cords[0]}, y: {self._cords[1]}, z: {self._cords[2]}')
@@ -44,15 +44,15 @@ class AquaticAnimal(Animal):
 
     def dive_in(self, dz):
         dive_depth = abs(dz) * self.speed / 2
-        NEW_Z = self._cords[2] - dive_depth
-        self._cords[2] = max(NEW_Z, 0)
+        new_z = self._cords[2] - dive_depth
+        self._cords[2] = max(new_z, 0)
 
 
 class PoisonousAnimal(Animal):
     _DEGREE_OF_DANGER = 8
 
 
-class Duckbill(Bird, AquaticAnimal, PoisonousAnimal):
+class Duckbill(PoisonousAnimal, AquaticAnimal,Bird):
     sound = "Click-click-click"
 
 
