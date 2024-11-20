@@ -70,33 +70,33 @@ class Cube(Figure):
 
 
 # Тесты для класса Circle
-circle1 = Circle((255, 0, 0), 10)  # Красный круг с длиной окружности 10
-print("Цвет круга:", circle1.get_color())  # [255, 0, 0]
-print("Стороны круга:", circle1.get_sides())  # [10]
-print("Периметр (длина окружности):", len(circle1))  # 10
-print("Площадь круга:", round(circle1.get_square(), 2))  # ~7.96
+circle1 = Circle((255, 0, 0), 10)
+print("Цвет круга:", circle1.get_color())
+print("Стороны круга:", circle1.get_sides())
+print("Периметр (длина окружности):", len(circle1))
+print("Площадь круга:", round(circle1.get_square(), 2))
 
 # Изменение цвета и проверка
 circle1.set_color(100, 100, 255)
-print("Изменённый цвет круга:", circle1.get_color())  # [100, 100, 255]
+print("Изменённый цвет круга:", circle1.get_color())
 
 # Тесты для класса Triangle
-triangle1 = Triangle((0, 255, 0), 9, 5, 5)  # Зелёный треугольник
-print("Цвет треугольника:", triangle1.get_color())  # [0, 255, 0]
-print("Стороны треугольника:", triangle1.get_sides())  # [3, 4, 5]
-print("Периметр треугольника:", len(triangle1))  # 12
-print("Площадь треугольника:", triangle1.get_square())  # 6.0
+triangle1 = Triangle((0, 255, 0), 9, 5, 5)
+print("Цвет треугольника:", triangle1.get_color())
+print("Стороны треугольника:", triangle1.get_sides())
+print("Периметр треугольника:", len(triangle1))
+print("Площадь треугольника:", triangle1.get_square())
 
 # Попытка изменить стороны треугольника
 triangle1.set_sides(6, 8, 10)
-print("Изменённые стороны треугольника:", triangle1.get_sides())  # [6, 8, 10]
+print("Изменённые стороны треугольника:", triangle1.get_sides())
 
 # Тесты для класса Cube
-cube1 = Cube((0, 0, 255), 3)  # Синий куб с ребром длиной 3
-print("Цвет куба:", cube1.get_color())  # [0, 0, 255]
-print("Стороны куба:", cube1.get_sides())  # [3, 3, 3, ..., 3] (12 раз)
-print("Периметр куба:", len(cube1))  # 36
-print("Объём куба:", cube1.get_volume())  # 27
+cube1 = Cube((0, 0, 255), 3)
+print("Цвет куба:", cube1.get_color())
+print("Стороны куба:", cube1.get_sides())
+print("Периметр куба:", len(cube1))
+print("Объём куба:", cube1.get_volume())
 
 # Попытка изменить стороны куба
 cube1.set_sides(4, 5, 6)
