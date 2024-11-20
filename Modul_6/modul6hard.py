@@ -69,26 +69,35 @@ class Cube(Figure):
         return side ** 3
 
 
-# Test
-circle1 = Circle((200, 200, 100), 10)  # Цвет, длина окружности
-cube1 = Cube((222, 35, 130), 6)  # Цвет, сторона куба
+# Тесты для класса Circle
+circle1 = Circle((255, 0, 0), 10)  # Красный круг с длиной окружности 10
+print("Цвет круга:", circle1.get_color())  # [255, 0, 0]
+print("Стороны круга:", circle1.get_sides())  # [10]
+print("Периметр (длина окружности):", len(circle1))  # 10
+print("Площадь круга:", round(circle1.get_square(), 2))  # ~7.96
 
-# Изменяется ли цвет
-circle1.set_color(55, 66, 77)
-print(circle1.get_color())
+# Изменение цвета и проверка
+circle1.set_color(100, 100, 255)
+print("Изменённый цвет круга:", circle1.get_color())  # [100, 100, 255]
 
-cube1.set_color(300, 70, 15)
-print(cube1.get_color())
+# Тесты для класса Triangle
+triangle1 = Triangle((0, 255, 0), 9, 5, 5)  # Зелёный треугольник
+print("Цвет треугольника:", triangle1.get_color())  # [0, 255, 0]
+print("Стороны треугольника:", triangle1.get_sides())  # [3, 4, 5]
+print("Периметр треугольника:", len(triangle1))  # 12
+print("Площадь треугольника:", triangle1.get_square())  # 6.0
 
-# Проверка на изменение сторон
-cube1.set_sides(5, 3, 12, 4, 5)
-print(cube1.get_sides())
+# Попытка изменить стороны треугольника
+triangle1.set_sides(6, 8, 10)
+print("Изменённые стороны треугольника:", triangle1.get_sides())  # [6, 8, 10]
 
-circle1.set_sides(15)
-print(circle1.get_sides())
+# Тесты для класса Cube
+cube1 = Cube((0, 0, 255), 3)  # Синий куб с ребром длиной 3
+print("Цвет куба:", cube1.get_color())  # [0, 0, 255]
+print("Стороны куба:", cube1.get_sides())  # [3, 3, 3, ..., 3] (12 раз)
+print("Периметр куба:", len(cube1))  # 36
+print("Объём куба:", cube1.get_volume())  # 27
 
-# Проверка периметра (длины окружности)
-print(len(circle1))
-
-# Проверка объёма куба
-print(cube1.get_volume())
+# Попытка изменить стороны куба
+cube1.set_sides(4, 5, 6)
+print("Попытка изменить стороны куба:", cube1.get_sides())
