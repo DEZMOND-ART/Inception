@@ -52,7 +52,7 @@ class PoisonousAnimal(Animal):
     _DEGREE_OF_DANGER = 8
 
 
-class Duckbill(PoisonousAnimal, AquaticAnimal,Bird):
+class Duckbill(PoisonousAnimal, AquaticAnimal, Bird):
     sound = "Click-click-click"
 
 
