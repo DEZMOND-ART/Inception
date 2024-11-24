@@ -6,15 +6,14 @@ class WordsFinder:
         all_words = {}
 
         for file_name in self.file_names:
-            try:
-                with open(file_name, 'r', encoding='utf-8') as file:
-                    content = file.read().lower()
-                    for _ in [',', '.', '=', '!', '?', ';', ':', ' - ']:
-                        content = content.replace(_, '')
-                    word = content.split()
-                    all_words[file_name] = word
-            except FileNotFoundError:
-                all_words[file_name] = []
+            # Открытие файла для чтения
+            file = open(file_name, 'r', encoding='utf-8')
+            content = file.read().lower()
+            for _ in [',', '.', '=', '!', '?', ';', ':', ' - ']:
+                content = content.replace(_, ' ')
+            word = content.split()
+            all_words[file_name] = word
+            file.close()
         return all_words
 
     def find(self, word):
@@ -22,10 +21,10 @@ class WordsFinder:
         all_words = self.get_all_words()
         result = {}
         for name, words in all_words.items():
-            try:
+            if word in words:
                 position = words.index(word) + 1
                 result[name] = position
-            except ValueError:
+            else:
                 result[name] = None
         return result
 
