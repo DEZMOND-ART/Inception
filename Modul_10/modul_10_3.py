@@ -36,11 +36,11 @@ class Bank:
 
 
 # Объект класса Bank
-bank = Bank()
+bk = Bank()
 
 # Потоки для пополнения и снятия средств
-deposit_thread = threading.Thread(target=bank.deposit)
-take_thread = threading.Thread(target=bank.take)
+deposit_thread = threading.Thread(target=Bank.deposit, args=(bk,))
+take_thread = threading.Thread(target=Bank.take, args=(bk,))
 
 # Запуск потоков
 deposit_thread.start()
@@ -50,4 +50,4 @@ take_thread.start()
 deposit_thread.join()
 take_thread.join()
 
-print(f'Итоговый баланс: {bank.balance}')
+print(f'Итоговый баланс: {bk.balance}')
